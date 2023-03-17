@@ -57,16 +57,22 @@ namespace ProjListaSimples
 
             Item aux;
             aux = Begin;
+            Item aux2 = aux.Next;
 
-            while(aux.Next != null)
+            while(aux2 != null)
             {
-                if(i.Valor <= aux.Next.Valor) 
+                if(i.Valor <= aux2.Valor) 
                 {
-                    i.Next = aux.Next;
+                    i.Next = aux2;
                     aux.Next = i;
+                    return;
                 }
-
-                aux = aux.Next;
+                else
+                {
+                    aux = aux2;
+                    aux2 = aux2.Next;
+                }
+                
             }
         }
         public Item Find(Item f)
@@ -116,7 +122,7 @@ namespace ProjListaSimples
             else
             {
                 Item aux = Begin;
-                while(aux.Next != null)
+                while(aux != null)
                 {
                     Console.Write(aux.Valor + " ");
                     aux = aux.Next;
