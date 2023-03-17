@@ -54,6 +54,7 @@ namespace ProjListaSimples
         }
         public void InsertMiddle(Item i)
         {
+
             Item aux;
             aux = Begin;
 
